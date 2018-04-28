@@ -8,6 +8,11 @@ def home_page(request):
             comment=our_comment,
             user=our_user
         )
+        all_comments = Comment.objects.all()
+        context = {'comments': all_comments}
 
-        return render(request, 'blog/home_page.html', {'comment': comment_obj,})
-    return render(request, 'blog/home_page.html')
+        return render(request, 'blog/home_page.html', context)
+  
+    all_comments = Comment.objects.all()
+    context = {'comments': all_comments}   
+    return render(request, 'blog/home_page.html', context)

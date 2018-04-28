@@ -23,6 +23,8 @@
  </form>
 
 <h2>Comments</h2>
-User {{comment.user}} says: {{comment.comment}}
+{% for comment in comments %}
+User {{comment.user}} says: {{comment.comment}}<hr>
+{% endfor %}
 </body>
 </html>
